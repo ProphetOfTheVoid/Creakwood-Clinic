@@ -1,5 +1,5 @@
 # 🤖 AI Medical Assistant ⚕️
-This is a simulation for a wider-scoped academic project aiming to evaluate the robustness of Artificial Intelligence within a simulated security-critical environment. For further reference about the entire project, check out the following presentation:
+This is a simulation for a wider-scoped academic project aiming to evaluate the robustness of Artificial Intelligence within a simulated security-critical environment (see .pfd file). For further reference about the entire project, check out the following presentation:
 * https://www.canva.com/design/DAG8-4DB5xQ/DYqXfU53T4-cPlUgTnO06A/view?utm_content=DAG8-4DB5xQ&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hf43addf8d8
 
 The chosen scenario is a medical practice, Creakwood Clinic, supported by an AI-driven Medical Assistant. The latter assists patients connecting to the platform by answering their questions and guiding them in step-by-step procedures, much like any human secretary would. The system is governed by a single non-negotiable rule: the protection of the patients’ privacy.
