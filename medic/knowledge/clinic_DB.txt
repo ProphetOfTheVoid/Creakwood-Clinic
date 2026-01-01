@@ -1,0 +1,130 @@
+========================================
+PATIENT DATABASE
+========================================
+
+---PATIENT RECORD START---
+PATIENT_ID: P001
+FULL_NAME: John Michael Smith
+DATE_OF_BIRTH: 03/15/1985
+CONTACT_PHONE: +1-555-0123
+CONTACT_EMAIL: john.smith@email.com
+
+RECENT_LAB_RESULTS:
+  TEST: Blood Panel (December 10, 2025)
+    Hemoglobin: 14.5 g/dL - NORMAL
+    White Blood Cell Count: 7,200 cells/mcL - NORMAL
+    Total Cholesterol: 195 mg/dL - NORMAL
+    LDL Cholesterol: 120 mg/dL - BORDERLINE HIGH (should be under 100)
+    HDL Cholesterol: 55 mg/dL - NORMAL
+    Triglycerides: 140 mg/dL - NORMAL
+    Fasting Glucose: 92 mg/dL - NORMAL
+    DOCTOR_NOTES: Recommend dietary modifications to lower LDL cholesterol. Increase fiber intake and reduce saturated fats.
+  
+  TEST: Urinalysis (November 5, 2025)
+    All parameters NORMAL
+
+MEDICAL_SUMMARY: Generally healthy 40-year-old male. LDL cholesterol slightly elevated. Advised lifestyle modifications. Next comprehensive panel in 6 months.
+---PATIENT RECORD END---
+
+
+---PATIENT RECORD START---
+PATIENT_ID: P002
+FULL_NAME: Sarah Elizabeth Martinez
+DATE_OF_BIRTH: 07/22/1992
+CONTACT_PHONE: +1-555-0456
+CONTACT_EMAIL: sarah.martinez@email.com
+
+RECENT_LAB_RESULTS:
+  TEST: Second Trimester Ultrasound (December 20, 2025)
+    Gestational Age: 22 weeks, 3 days
+    Fetal Heart Rate: 145 bpm - NORMAL
+    Estimated Fetal Weight: 478 grams - NORMAL
+    Placenta Position: Anterior, normal placement
+    Amniotic Fluid: Normal levels
+    Fetal Anatomy: All structures normal
+    RESULT: Normal development, no concerns identified
+  
+  TEST: Prenatal Blood Panel (November 30, 2025)
+    Hemoglobin: 11.8 g/dL - NORMAL for pregnancy
+    Iron: 65 mcg/dL - NORMAL
+    Blood Type: O Positive
+    Rubella Immunity: IMMUNE
+    HIV: NEGATIVE
+    Hepatitis B: NEGATIVE
+    Syphilis: NEGATIVE
+    RESULT: All results normal
+  
+  TEST: First Trimester Screening (October 15, 2025)
+    NT Measurement: 1.2 mm - NORMAL
+    Risk Assessment: LOW RISK for chromosomal abnormalities
+
+MEDICAL_SUMMARY: Healthy 33-year-old pregnant patient at 24 weeks gestation. Expected due date: April 15, 2026. Pregnancy progressing normally with no complications. Continue prenatal vitamins and routine monitoring.
+---PATIENT RECORD END---
+
+
+---PATIENT RECORD START---
+PATIENT_ID: P003
+FULL_NAME: Robert James Thompson
+DATE_OF_BIRTH: 11/08/1958
+CONTACT_PHONE: +1-555-0789
+CONTACT_EMAIL: robert.thompson@email.com
+
+RECENT_LAB_RESULTS:
+  TEST: Cardiac Stress Test (December 12, 2025)
+    Resting Heart Rate: 72 bpm
+    Peak Heart Rate: 142 bpm (87% of maximum predicted)
+    Blood Pressure at Rest: 138/86 mmHg
+    Blood Pressure at Peak: 165/92 mmHg
+    ECG: No significant abnormalities
+    Exercise Tolerance: 9 minutes - Good for age
+    RESULT: NORMAL - No evidence of heart disease during exercise
+  
+  TEST: Lipid Panel (December 5, 2025)
+    Total Cholesterol: 245 mg/dL - HIGH
+    LDL Cholesterol: 165 mg/dL - HIGH
+    HDL Cholesterol: 42 mg/dL - BORDERLINE LOW
+    Triglycerides: 190 mg/dL - HIGH
+    RESULT: ABNORMAL - Started on Atorvastatin 20mg daily
+  
+  TEST: Metabolic Panel (December 5, 2025)
+    Fasting Glucose: 118 mg/dL - PREDIABETIC RANGE (100-125)
+    Creatinine: 1.1 mg/dL - NORMAL
+    Kidney Function (eGFR): 72 - Mildly reduced
+    Potassium: 4.2 mEq/L - NORMAL
+    Sodium: 140 mEq/L - NORMAL
+
+CURRENT_MEDICATIONS:
+  - Atorvastatin 20mg once daily (for high cholesterol)
+
+MEDICAL_SUMMARY: 67-year-old male with hypertension, high cholesterol, and prediabetes. Started on cholesterol medication. Strongly advised: heart-healthy diet, regular exercise, weight loss, home blood pressure monitoring. Follow-up scheduled to assess treatment effectiveness.
+---PATIENT RECORD END---
+
+
+---PATIENT RECORD START---
+PATIENT_ID: P004
+FULL_NAME: Maria Isabella Rodriguez
+DATE_OF_BIRTH: 05/30/1978
+CONTACT_PHONE: +1-555-0234
+CONTACT_EMAIL: maria.rodriguez@email.com
+
+RECENT_LAB_RESULTS:
+  BIOPSY: Left Shoulder Lesion (December 18, 2025)
+    Location: Left shoulder, 2cm lesion
+    Procedure: Shave biopsy
+    Diagnosis: Seborrheic Keratosis (benign growth)
+    Malignancy: NEGATIVE
+    RESULT: BENIGN - No treatment needed, completely removed
+  
+  BIOPSY: Right Forearm Mole (December 18, 2025)
+    Location: Right forearm, irregular mole
+    Procedure: Punch biopsy
+    Diagnosis: Dysplastic Nevus with mild atypia (atypical mole)
+    Recommendation: Complete surgical excision with clear margins
+    RESULT: PRECANCEROUS - Removal scheduled for January 30, 2026
+
+MEDICAL_SUMMARY: 47-year-old female underwent full body skin examination. Two lesions biopsied: one benign (already removed), one atypical mole requiring surgical removal. Patient educated on sun protection, use of SPF 30+ sunscreen, avoiding peak sun hours, and monthly self-skin checks. Annual dermatology follow-up recommended.
+---PATIENT RECORD END---
+
+========================================
+END OF DATABASE
+========================================

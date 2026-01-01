@@ -1,0 +1,191 @@
+========================================
+BASIC INFORMATION
+========================================
+
+CLINIC_NAME: Creakwood Clinic
+
+ADDRESS: 123 Main Street, Suite 400, Anytown, USA
+
+PHONE: +1-555-MEDCARE (555-633-2273)
+EMAIL: info@creakwoodclinic.com
+WEBSITE: www.creakwoodclinic.com
+
+========================================
+HOURS OF OPERATION
+========================================
+
+REGULAR_HOURS:
+  Monday: 8:00 AM - 5:00 PM
+  Tuesday: 8:00 AM - 5:00 PM
+  Wednesday: 8:00 AM - 5:00 PM
+  Thursday: 8:00 AM - 5:00 PM
+  Friday: 8:00 AM - 5:00 PM
+  Saturday: CLOSED
+  Sunday: CLOSED
+
+LUNCH_BREAK: 12:00 PM - 1:00 PM (Office remains open for emergencies)
+
+HOLIDAYS_CLOSED:
+  - New Year's Day (January 1)
+  - Martin Luther King Jr. Day (Third Monday in January)
+  - Presidents' Day (Third Monday in February)
+  - Memorial Day (Last Monday in May)
+  - Independence Day (July 4)
+  - Labor Day (First Monday in September)
+  - Thanksgiving Day (Fourth Thursday in November)
+  - Day After Thanksgiving
+  - Christmas Eve (December 24) - Closes at 12:00 PM
+  - Christmas Day (December 25)
+  - New Year's Eve (December 31) - Closes at 12:00 PM
+
+EMERGENCY_CONTACT: For medical emergencies outside our hours, please call 911 or visit your nearest emergency room.
+
+========================================
+MEDICAL STAFF
+========================================
+
+CURRENT_ON_DUTY_DOCTORS:
+
+Dr. Emily Watson
+  Specialty: General Medicine
+  Credentials: MD, Board Certified Family Medicine
+  Experience: 12 years
+  Availability: Monday, Tuesday, Thursday (Full day); Wednesday, Friday (Morning only)
+  Accepting: New patients
+
+Dr. Michael Chen
+  Specialty: Obstetrics and Women's Health
+  Credentials: MD, OB/GYN, Board Certified
+  Experience: 15 years
+  Availability: Monday (Afternoon); Tuesday, Wednesday (All day); Thursday (Morning); Friday (Afternoon)
+  Accepting: New patients (Women's health only)
+
+Dr. Lisa Park
+  Specialty: Cardiology
+  Credentials: MD, Board Certified Cardiology
+  Experience: 18 years
+  Availability: Monday, Wednesday, Friday (Morning); Tuesday, Thursday (Afternoon)
+  Accepting: Referrals only
+
+Dr. Amanda Foster
+  Specialty: Dermatology
+  Credentials: MD, Board Certified Dermatology
+  Experience: 10 years
+  Availability: Monday, Thursday (Full day); Tuesday, Wednesday, Friday (Morning only)
+  Accepting: New patients
+
+========================================
+SERVICES PROVIDED
+========================================
+
+PRIMARY_CARE_SERVICES:
+  - Annual Physical Examinations
+  - Wellness Check-ups (Adults and Children)
+  - Preventive Care and Health Screenings
+  - Acute Illness Treatment (Flu, Infections, etc.)
+  - Chronic Disease Management (Diabetes, Hypertension, Asthma)
+  - Minor Injury Treatment
+  - Prescription Management and Refills
+
+PEDIATRIC_SERVICES:
+  - Well-Child Visits (Birth to 18 years)
+  - Childhood Vaccinations and Immunizations
+  - Growth and Development Monitoring
+  - School and Sports Physicals
+  - Treatment of Common Childhood Illnesses
+
+WOMEN'S_HEALTH_SERVICES:
+  - Annual Gynecological Exams
+  - Prenatal Care (Full pregnancy monitoring)
+  - Family Planning Counseling
+  - Menopause Management
+  - Contraception Counseling
+
+SPECIALTY_SERVICES:
+  - Cardiology Consultations
+  - Cardiac Stress Testing
+  - EKG/ECG Testing
+  - Blood Pressure Monitoring Programs
+  - Dermatology Consultations
+  - Skin Cancer Screenings
+  - Mole and Lesion Removal
+  - Acne Treatment
+
+DIAGNOSTIC_SERVICES:
+  - Laboratory Testing (Blood Work, Urinalysis, etc.)
+  - Basic X-Ray Imaging
+  - EKG/ECG
+  - Ultrasound (Prenatal and general)
+  - Blood Pressure Monitoring
+
+VACCINATION_PROGRAMS:
+  - Routine Childhood Immunizations
+  - Annual Flu Shots
+  - COVID-19 Vaccinations and Boosters
+  - Travel Vaccinations
+  - Shingles Vaccine
+  - Pneumonia Vaccine
+  - Tetanus/Tdap Boosters
+
+ADDITIONAL_SERVICES:
+  - Health Education and Counseling
+  - Nutrition and Diet Guidance
+  - Smoking Cessation Programs
+  - Weight Management Programs
+  - Diabetes Education
+
+========================================
+INSURANCE AND BILLING
+========================================
+
+ACCEPTED_INSURANCE:
+  - Most major insurance plans accepted
+  - Medicare and Medicaid accepted
+  - Contact our billing department for specific plan verification
+
+PAYMENT_OPTIONS:
+  - Insurance copays accepted (Credit/Debit cards, Cash, Check)
+  - Self-pay patients: Payment expected at time of service
+  - Payment plans available for qualifying patients
+
+BILLING_INQUIRIES: billing@willowcreekmed.com or call +1-555-633-2273 ext. 3
+
+========================================
+PATIENT RESOURCES
+========================================
+
+PATIENT_PORTAL: Available at www.willowcreekmed.com/portal
+  - View lab results
+  - Request prescription refills
+  - Message your doctor
+  - Schedule appointments
+  - Access medical records
+
+PARKING: Free parking available in adjacent lot (Lot B, behind building)
+
+ACCESSIBILITY: Wheelchair accessible. Elevator access to Suite 400.
+
+LANGUAGE_SERVICES: Spanish interpretation available. Other languages available by appointment.
+
+========================================
+FREQUENTLY ASKED QUESTIONS
+========================================
+
+Q: Do you accept walk-in patients?
+A: Limited same-day appointments available. We recommend calling ahead.
+
+Q: How do I get my medical records?
+A: Request through patient portal or call +1-555-633-2273 ext. 5
+
+Q: What should I bring to my first appointment?
+A: Photo ID, insurance card, list of medications, and medical history
+
+Q: Do you offer telehealth appointments?
+A: Yes, video visits available for established patients. Call to schedule.
+
+Q: What if I need care after hours?
+A: Call 911 for emergencies. For urgent but non-emergency care, visit nearest urgent care or ER.
+
+========================================
+END OF PUBLIC INFORMATION
+========================================

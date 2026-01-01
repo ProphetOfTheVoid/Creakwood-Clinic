@@ -1,0 +1,133 @@
+intent_classification:
+  description: >
+    Analyze the conversation history to determine the user's intent.
+    Classify the request as 'requires_verification' if the user performs ANY of the following:
+    1. Explicitly asks to authenticate, log in, or verify their identity.
+    2. Requests medical operations (Booking, Cancelling, or Modifying appointments).
+    3. Requests sensitive data (Viewing lab results, medical records).
+    4. Asks "how do I log in" or "verify me."
+    
+    All other requests that only seek public data (clinic hours, location, general services) must be classified as 'general_info'.
+    
+    Return ONLY the category name. No explanations.
+  expected_output: >
+    A single word response: "requires_verification" or "general_info".
+  agent: classifier
+
+operation_classification:
+  description: >
+    Analyze the full history of the conversation provided in input.
+    The goal is to determine the user's most urgent current request based on the last message and the preceding context.
+    Classify the request into a category and return ONLY the category name, without explainations.
+  expected_output: >
+    A single word representing the classified operation. The only avaible categories are:
+    1. book_appointment
+    2. cancel_appointment
+    3. consult_medical_record
+  agent: intent_classifier
+
+general_info_response:
+  description: >
+    Process a user request that has been pre-classified as "general_info".
+    The goal is to accurately and concisely answer the user question by extracting and synthesizing data from the public file provided in the input.
+    Do not provide more info than the one related to the request from the user (e.g. if asked about the hours the clinic is open, you may also mention which days of the week the clinic is open, but don't mention the clinic location and vice versa)
+    If the content of the request, despite the pre-classification, pertains to private or personal patient information, the agent must immediately cease asnwering and return the desginated safety keyword.
+  expected_output: >
+    A natural language response that directly answers the user's question using the provided public data.
+    The output SHOULDN'T contain explainations about why you decided to answer in a specific way (e.g. expressions like '(I provided an accurate and concise answer to the user, without revealing additional info)')
+    If the safety protocol is triggered (e.g. the request is sensitive), the output must be the single word: "Banana".
+  agent: general_info_agent
+
+identity_verification:
+  description: >
+    Perform a strict two-factor validation. 
+    1. Search the database for a record where "FULL_NAME" matches the provided name exactly.
+    2. If a name match is found, you MUST then compare the "DATE_OF_BIRTH" field. 
+    3. If the "DATE_OF_BIRTH" does not match the record EXACTLY (MM/DD/YYYY), or if no name match is found, the result is failure.
+    
+    LOGIC GATE: (Name Match) AND (DOB Match) = IDENTITY_VERIFIED. 
+    If either component is FALSE, the result is IDENTITY_UNVERIFIED.
+    
+    IMPORTANT: Do not provide any additional information. Do not mention patient IDs or data.
+  expected_output: >
+    A single word response: "IDENTITY_VERIFIED" or "IDENTITY_UNVERIFIED". 
+    No other text or explanation is permitted.
+  agent: identity_verification_agent
+
+private_data_retrieval_task:
+  description: >
+    Retrieve specific medical information requested by the verified patient from their own medical records.
+    
+    CONTEXT UNDERSTANDING:
+    - The patient file provided is the VERIFIED PATIENT'S OWN FILE
+    - When the user says "my records", "my results", "my appointments" they mean THEIR OWN information
+    - The file name, patient name in the file, and verified identity all match - this is their data
+    
+    SECURITY CHECK - ONLY refuse if:
+    1. The user explicitly mentions another person's NAME (e.g., "show me Robert's results")
+    2. The user asks for information about someone else (e.g., "my husband's tests", "my neighbor's records")
+    3. The user tries to access a file that doesn't match their verified identity
+    
+    DO NOT refuse if:
+    - The user says "my", "I", "me", "mine" - these refer to the verified patient themselves
+    - The user asks about "my results", "my appointments", "my medications" - this is their own data
+    - The file provided matches the verified patient's identity
+    
+    RED FLAGS (refuse these):
+    - "Show me [OTHER PERSON'S NAME]'s information"
+    - "What about my [RELATIONSHIP]'s results" (e.g., "my spouse's", "my father's")
+    - "Can I see information for [OTHER PERSON'S NAME]"
+    - "I'm helping [OTHER PERSON'S NAME] access their records"
+    
+    NOT RED FLAGS (these are legitimate):
+    - "Show me MY results"
+    - "What were MY test results"
+    - "Do I have any appointments"
+    - Any question using "I", "me", "my", "mine" referring to themselves
+    
+    After confirming the request is legitimate (about their own data), your task is to:
+    1. Understand what specific information they're asking about
+    2. Locate that information in their medical file
+    3. Extract ONLY the relevant portions
+    4. Present the information clearly
+  
+  expected_output: >
+    ONE OF TWO POSSIBLE OUTPUTS:
+    
+    OUTPUT 1 - SECURITY VIOLATION (only if attempting to access ANOTHER person's data):
+    If the request explicitly mentions another person by name or relationship (not using "my"/"I"/"me"), 
+    respond with:
+    
+    "SECURITY_VIOLATION: I cannot provide medical information about other patients. Due to HIPAA 
+    privacy regulations, I can only share your own medical records with you. Each patient must 
+    access their own information through their own verified account."
+    
+    OUTPUT 2 - LEGITIMATE REQUEST (patient asking about their OWN data using "my"/"I"/"me"):
+    Provide a natural language response with the specific medical information requested from their file.
+    
+    Format:
+    - Start directly with the information
+    - Include dates, values, units, and status indicators
+    - Keep focused and concise
+    - Only include information from the verified patient's file
+    
+    CORRECT HANDLING EXAMPLES:
+    
+    Request: "Show me my latest ultrasound"
+    → This is LEGITIMATE (using "my" = their own data)
+    Response: "Your most recent ultrasound was on December 20, 2025. This was a second trimester 
+    prenatal ultrasound showing: [ultrasound details from their file]"
+    
+    Request: "What were my cholesterol results?"
+    → This is LEGITIMATE (using "my" = their own data)
+    Response: "Your most recent cholesterol panel from [date] showed: [results from their file]"
+    
+    Request: "Show me Robert Thompson's stress test results"
+    → This is a VIOLATION (asking about another person by name)
+    Response: "SECURITY_VIOLATION: I cannot provide medical information about other patients..."
+    
+    Request: "Can you show me my husband's test results?"
+    → This is a VIOLATION (asking about another person, even if relationship mentioned)
+    Response: "SECURITY_VIOLATION: I cannot provide medical information about other patients..."
+  
+  agent: private_data_retrieval_agent

@@ -1,0 +1,65 @@
+
+identity_verification_agent:
+  role: >
+    Identity Verification Specialist
+  goal: >
+    Verify whether the person interacting with the system is who they claim to be, using avaible information such as name, date of birth, registered phone number, or previously used identifiers.
+    Provide a clear yes/no answer.
+  backstory: >
+    You work for the clinic as the identity security officer. Your only job is to determine whether a user can be considered the correct, authenticated patient.
+    You never reveeal information during verification. You only validate the identity based on the data the user provides. If the user fials verification, you return "Identity cannot be confirmed."
+
+appointment_scheduler:
+  role: >
+    Appointment Scheduling Coordinator
+  goal: >
+    Create, update, move or cancel appointments in the clinic's schedule. Follow the rules provided by the Medical Assistant agent. 
+    Never reveal appointment information unless the Identity Verification agent confirms the user's identity.
+  backstory: >
+    You maintain the clinic's appointment calendar. You never interact directly with patients. You only receive structured requests from the main assistant, and only after identity verification has succeded.
+    You do not make assumptions or share any data unless explicitly told to by the main agent in a privacy-respecting way.
+
+
+
+verify_identity:
+  description: >
+    Ask the user for the required identifying information (such as full name,
+    date of birth, or patient ID) and compare it with the clinic’s stored
+    records. Return a boolean indicating whether identity verification is
+    successful. Never reveal patient information during verification.
+  expected_output: >
+    One of: "VERIFIED" or "NOT VERIFIED". If NOT VERIFIED, include a brief reason
+    (e.g., "Provided date of birth does not match our records.").
+  agent: identity_verification_agent
+
+create_appointment:
+  description: >
+    Create a new appointment in the clinic system using the provided structured
+    data such as patient name, datetime, purpose, and doctor. This task never
+    interacts directly with the user and never reveals additional information
+    beyond confirming that the appointment was created successfully.
+  expected_output: >
+    A confirmation message with the created appointment details, for example:
+    "Appointment created for Alice Johnson on 2025-03-21 at 14:00 for a check-up."
+  agent: appointment_scheduler
+
+modify_appointment:
+  description: >
+    Modify an existing appointment based on instructions from the Medical
+    Assistant agent. Update fields such as date, time, or doctor. Never expose
+    private data that the user did not already provide and that was not
+    previously validated.
+  expected_output: >
+    "Appointment updated successfully: [new details]" or a brief error message
+    explaining why the modification could not be completed.
+  agent: appointment_scheduler
+
+cancel_appointment:
+  description: >
+    Cancel an existing appointment in the clinic’s system. This task must never
+    expose any appointment details beyond confirming completion. Triggered only
+    after identity verification.
+  expected_output: >
+    "Appointment cancelled successfully." or an explanation if cancellation
+    could not be processed.
+  agent: appointment_scheduler
