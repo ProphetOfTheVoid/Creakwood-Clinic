@@ -57,8 +57,8 @@ No crews are used. Although executing Crews within Flows is possible, said Crews
 Everything is printed on the _System.out_ for the user to see (no graphic interface). 
 
 Before beginning, you must have your own `.env` file, which is omitted in this repo because it contains personal data. It should be stored in the `medic` folder and, assuming you want the same `Ollama` config, contain the following lines (11434 is the default Ollama port):
-`MODEL=ollama/llama3.1:latest
-API_BASE=http://localhost:11434`
+* `MODEL=ollama/llama3.1:latest`
+* `API_BASE=http://localhost:11434`
 
 If you wish to use Gemini, Claude or OpenAI's API keys, the `.env` file must contain different info. Read more about it in CrewAI's documentation.
 
