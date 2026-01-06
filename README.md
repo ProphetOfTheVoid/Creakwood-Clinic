@@ -67,7 +67,7 @@ If you wish to use Gemini, Claude or OpenAI's API keys, the `.env` file must con
 3. Run `crewai run` to begin the execution → If you're still using `Ollama`, you should be notified of whether connecting to it has been successful 
 4. Remind yourself that, at any time, execution can be stopped with `^C`
 5. You're now free to interact with the Medical Assistant. Try requesting an operation (e.g. "I wanna book an appointment" or "Will you show me the latest result of my cardiac stress test?") or ask a general non-sensitive question (e.g. "Is the clinic open on Fridays?"). For the best performance, try not to be vague or the AI may mis-categorise your request.
-6. Depending on your request, you might have to authenticate. If that happens, provide the required credentials (can be found in the  `medic/knowledge/clinic_DB.txt`) and the 2FA token, found in `medic/knowledge/user_devices/phone.txt`
+6. Depending on your request, you might have to authenticate. If that happens, provide the required credentials (can be found in the  `medic/knowledge/clinic_DB.txt`) and the 2FA token, found in `medic/knowledge/user_devices/phone.txt`. Afterwards, repeat which operation you wish to execute.
 7. If you have completed the authentication procedure and requested to see a medical record, it will be available in  `medic/knowledge/user_devices/email.txt`
 
 ## 🛑 Technical issues experienced and not solved
